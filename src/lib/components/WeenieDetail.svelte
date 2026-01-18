@@ -95,7 +95,7 @@
 								<LoadingIcon src="https://dats.treestats.net/icons/{backgroundId}?scale=2" alt="background" />
 								<span class="ingredient-tag">background</span>
 							</div>
-							<span class="alchemical-symbol">&#x2726;</span>
+							<span class="alchemical-symbol">+</span>
 						{/if}
 					{/if}
 					{#if weenie.icon_underlay}
@@ -104,7 +104,7 @@
 							<LoadingIcon src="https://dats.treestats.net/icons/{weenie.icon_underlay}?scale=2" alt="underlay" />
 							<span class="ingredient-tag">underlay</span>
 						</div>
-						<span class="alchemical-symbol">&#x2726;</span>
+						<span class="alchemical-symbol">+</span>
 					{/if}
 					<div class="ingredient-slot primary">
 						<div class="ingredient-glow"></div>
@@ -112,7 +112,7 @@
 						<span class="ingredient-tag">icon</span>
 					</div>
 					{#if weenie.icon_overlay}
-						<span class="alchemical-symbol">&#x2726;</span>
+						<span class="alchemical-symbol">+</span>
 						<div class="ingredient-slot">
 							<div class="ingredient-glow"></div>
 							<LoadingIcon src="https://dats.treestats.net/icons/{weenie.icon_overlay}?scale=2" alt="overlay" />
@@ -120,7 +120,7 @@
 						</div>
 					{/if}
 					{#if weenie.icon_overlay2}
-						<span class="alchemical-symbol">&#x2726;</span>
+						<span class="alchemical-symbol">+</span>
 						<div class="ingredient-slot">
 							<div class="ingredient-glow"></div>
 							<LoadingIcon src="https://dats.treestats.net/icons/{weenie.icon_overlay2}?scale=2" alt="overlay2" />
@@ -424,9 +424,11 @@
 
 	/* Alchemical connector symbols */
 	.alchemical-symbol {
-		font-size: 16px;
+		font-size: 42px;
+		font-weight: 700;
 		color: #d4a84b;
 		text-shadow: 0 0 8px rgba(212, 168, 75, 0.4);
-		opacity: 0.8;
+		line-height: 1;
+		opacity: 0.65;
 	}
 </style>
