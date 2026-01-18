@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { getWeenie, buildIconUrl, getItemTypeName, getItemTypeBackgroundId, type WeenieDetail } from '$lib/api/acedb';
+	import LoadingIcon from './LoadingIcon.svelte';
 
 	interface Props {
 		classId: number;
@@ -40,10 +41,9 @@
 	{:else if weenie}
 		<div class="weenie-card">
 			{#if weenie.icon_id}
-				<img
+				<LoadingIcon
 					src={buildIconUrl(weenie.icon_id, weenie.icon_overlay, weenie.icon_overlay2, weenie.icon_underlay, weenie.item_type)}
 					alt={weenie.name ?? weenie.class_Name}
-					class="weenie-icon"
 				/>
 			{/if}
 			<div class="weenie-info">
@@ -77,7 +77,7 @@
 						{@const backgroundId = getItemTypeBackgroundId(weenie.item_type)}
 						{#if backgroundId}
 							<div class="breakdown-item">
-								<img src="https://dats.treestats.net/icons/{backgroundId}?scale=2" alt="background" />
+								<LoadingIcon src="https://dats.treestats.net/icons/{backgroundId}?scale=2" alt="background" />
 								<span class="label">background</span>
 							</div>
 							<span class="plus">+</span>
@@ -85,26 +85,26 @@
 					{/if}
 					{#if weenie.icon_underlay}
 						<div class="breakdown-item">
-							<img src="https://dats.treestats.net/icons/{weenie.icon_underlay}?scale=2" alt="underlay" />
+							<LoadingIcon src="https://dats.treestats.net/icons/{weenie.icon_underlay}?scale=2" alt="underlay" />
 							<span class="label">underlay</span>
 						</div>
 						<span class="plus">+</span>
 					{/if}
 					<div class="breakdown-item">
-						<img src="https://dats.treestats.net/icons/{weenie.icon_id}?scale=2" alt="icon" />
+						<LoadingIcon src="https://dats.treestats.net/icons/{weenie.icon_id}?scale=2" alt="icon" />
 						<span class="label">icon</span>
 					</div>
 					{#if weenie.icon_overlay}
 						<span class="plus">+</span>
 						<div class="breakdown-item">
-							<img src="https://dats.treestats.net/icons/{weenie.icon_overlay}?scale=2" alt="overlay" />
+							<LoadingIcon src="https://dats.treestats.net/icons/{weenie.icon_overlay}?scale=2" alt="overlay" />
 							<span class="label">overlay</span>
 						</div>
 					{/if}
 					{#if weenie.icon_overlay2}
 						<span class="plus">+</span>
 						<div class="breakdown-item">
-							<img src="https://dats.treestats.net/icons/{weenie.icon_overlay2}?scale=2" alt="overlay2" />
+							<LoadingIcon src="https://dats.treestats.net/icons/{weenie.icon_overlay2}?scale=2" alt="overlay2" />
 							<span class="label">overlay2</span>
 						</div>
 					{/if}
@@ -136,13 +136,6 @@
 		background: #f9f9f9;
 		border: 1px solid #ddd;
 		border-radius: 8px;
-	}
-
-	.weenie-icon {
-		width: 64px;
-		height: 64px;
-		image-rendering: pixelated;
-		flex-shrink: 0;
 	}
 
 	.weenie-info h2 {
@@ -200,15 +193,6 @@
 		flex-direction: column;
 		align-items: center;
 		gap: 4px;
-	}
-
-	.breakdown-item img {
-		width: 64px;
-		height: 64px;
-		image-rendering: pixelated;
-		background: #fff;
-		border: 1px solid #ddd;
-		border-radius: 4px;
 	}
 
 	.breakdown-item .label {
