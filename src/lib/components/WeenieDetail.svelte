@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { getWeenie, buildIconUrl, type WeenieDetail } from '$lib/api/acedb';
+	import { getWeenie, buildIconUrl, getItemTypeName, getItemTypeBackgroundId, type WeenieDetail } from '$lib/api/acedb';
 
 	interface Props {
 		classId: number;
@@ -41,7 +41,7 @@
 		<div class="weenie-card">
 			{#if weenie.icon_id}
 				<img
-					src={buildIconUrl(weenie.icon_id, weenie.icon_overlay, weenie.icon_overlay2, weenie.icon_underlay, weenie.type)}
+					src={buildIconUrl(weenie.icon_id, weenie.icon_overlay, weenie.icon_overlay2, weenie.icon_underlay, weenie.item_type)}
 					alt={weenie.name ?? weenie.class_Name}
 					class="weenie-icon"
 				/>
@@ -55,11 +55,15 @@
 					<dd>{weenie.class_Name}</dd>
 					<dt>Type</dt>
 					<dd>{weenie.type}</dd>
+					{#if weenie.item_type != null}
+						<dt>Item Type</dt>
+						<dd>{weenie.item_type} ({getItemTypeName(weenie.item_type) ?? 'unknown'})</dd>
+					{/if}
 					{#if weenie.icon_id}
 						<dt>Icon ID</dt>
 						<dd>{weenie.icon_id}</dd>
 						<dt>Icon URL</dt>
-						<dd><a href={buildIconUrl(weenie.icon_id, weenie.icon_overlay, weenie.icon_overlay2, weenie.icon_underlay, weenie.type)} target="_blank" rel="noopener">View icon</a></dd>
+						<dd><a href={buildIconUrl(weenie.icon_id, weenie.icon_overlay, weenie.icon_overlay2, weenie.icon_underlay, weenie.item_type)} target="_blank" rel="noopener">View icon</a></dd>
 					{/if}
 				</dl>
 			</div>
@@ -68,8 +72,17 @@
 		{#if weenie.icon_id}
 			<div class="icon-breakdown">
 				<h3>Icon Breakdown</h3>
-				<p class="breakdown-type">Type: {weenie.type}</p>
 				<div class="breakdown-row">
+					{#if weenie.item_type != null}
+						{@const backgroundId = getItemTypeBackgroundId(weenie.item_type)}
+						{#if backgroundId}
+							<div class="breakdown-item">
+								<img src="https://dats.treestats.net/icons/{backgroundId}?scale=2" alt="background" />
+								<span class="label">background</span>
+							</div>
+							<span class="plus">+</span>
+						{/if}
+					{/if}
 					{#if weenie.icon_underlay}
 						<div class="breakdown-item">
 							<img src="https://dats.treestats.net/icons/{weenie.icon_underlay}?scale=2" alt="underlay" />
@@ -170,15 +183,9 @@
 	}
 
 	.icon-breakdown h3 {
-		margin: 0 0 8px;
+		margin: 0 0 12px;
 		font-size: 14px;
 		color: #666;
-	}
-
-	.breakdown-type {
-		margin: 0 0 12px;
-		font-size: 12px;
-		color: #888;
 	}
 
 	.breakdown-row {
