@@ -1,12 +1,16 @@
 <script lang="ts">
+	import { page } from '$app/stores';
+	import { goto } from '$app/navigation';
 	import WeenieSearch from '$lib/components/WeenieSearch.svelte';
 	import WeenieDetail from '$lib/components/WeenieDetail.svelte';
 	import type { WeenieSearchResult } from '$lib/api/acedb';
 
-	let selectedWeenie = $state<WeenieSearchResult | null>(null);
+	let selectedClassId = $derived(
+		$page.url.searchParams.get('id') ? Number($page.url.searchParams.get('id')) : null
+	);
 
 	function handleSelect(weenie: WeenieSearchResult) {
-		selectedWeenie = weenie;
+		goto(`?id=${weenie.class_Id}`, { replaceState: false, keepFocus: true });
 	}
 </script>
 
@@ -18,8 +22,8 @@
 	<h1>AC Icon Viewer</h1>
 	<WeenieSearch onSelect={handleSelect} />
 
-	{#if selectedWeenie}
-		<WeenieDetail classId={selectedWeenie.class_Id} />
+	{#if selectedClassId}
+		<WeenieDetail classId={selectedClassId} />
 	{/if}
 
 	<footer>

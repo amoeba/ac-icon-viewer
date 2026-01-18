@@ -64,6 +64,39 @@
 				</dl>
 			</div>
 		</div>
+
+		{#if weenie.icon_id}
+			<div class="icon-breakdown">
+				<h3>Icon Breakdown</h3>
+				<div class="breakdown-row">
+					{#if weenie.icon_underlay}
+						<div class="breakdown-item">
+							<img src="https://dats.treestats.net/icons/{weenie.icon_underlay}?scale=2" alt="underlay" />
+							<span class="label">underlay</span>
+						</div>
+						<span class="plus">+</span>
+					{/if}
+					<div class="breakdown-item">
+						<img src="https://dats.treestats.net/icons/{weenie.icon_id}?scale=2" alt="icon" />
+						<span class="label">icon</span>
+					</div>
+					{#if weenie.icon_overlay}
+						<span class="plus">+</span>
+						<div class="breakdown-item">
+							<img src="https://dats.treestats.net/icons/{weenie.icon_overlay}?scale=2" alt="overlay" />
+							<span class="label">overlay</span>
+						</div>
+					{/if}
+					{#if weenie.icon_overlay2}
+						<span class="plus">+</span>
+						<div class="breakdown-item">
+							<img src="https://dats.treestats.net/icons/{weenie.icon_overlay2}?scale=2" alt="overlay2" />
+							<span class="label">overlay2</span>
+						</div>
+					{/if}
+				</div>
+			</div>
+		{/if}
 	{/if}
 </div>
 
@@ -126,5 +159,52 @@
 
 	.weenie-info a:hover {
 		text-decoration: underline;
+	}
+
+	.icon-breakdown {
+		margin-top: 20px;
+		padding: 16px;
+		background: #f0f0f0;
+		border-radius: 8px;
+	}
+
+	.icon-breakdown h3 {
+		margin: 0 0 12px;
+		font-size: 14px;
+		color: #666;
+	}
+
+	.breakdown-row {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		flex-wrap: wrap;
+	}
+
+	.breakdown-item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 4px;
+	}
+
+	.breakdown-item img {
+		width: 64px;
+		height: 64px;
+		image-rendering: pixelated;
+		background: #fff;
+		border: 1px solid #ddd;
+		border-radius: 4px;
+	}
+
+	.breakdown-item .label {
+		font-size: 11px;
+		color: #888;
+	}
+
+	.plus {
+		font-size: 24px;
+		font-weight: 300;
+		color: #999;
 	}
 </style>
