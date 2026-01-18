@@ -42,14 +42,15 @@
 
 	main {
 		max-width: 600px;
+		min-width: 300px;
 		margin: 0 auto;
-		padding: 40px 20px;
+		padding: 16px 12px;
 		font-family: system-ui, -apple-system, sans-serif;
 	}
 
 	h1 {
-		margin: 0 0 24px;
-		font-size: 26px;
+		margin: 0 0 16px;
+		font-size: 22px;
 		font-weight: 600;
 		background: linear-gradient(135deg, #8b7355 0%, #c9a227 50%, #8b7355 100%);
 		-webkit-background-clip: text;
@@ -58,14 +59,14 @@
 	}
 
 	footer {
-		margin-top: 48px;
-		padding: 20px;
+		margin-top: 32px;
+		padding: 16px;
 		background: linear-gradient(145deg, #fafaf8 0%, #f0eeea 100%);
 		border: 1px solid #d8d4cc;
 		border-top: 2px solid rgba(139, 115, 85, 0.3);
 		border-radius: 12px;
 		box-shadow: 0 2px 8px rgba(139, 115, 85, 0.06);
-		font-size: 14px;
+		font-size: 13px;
 		color: #666;
 		text-align: center;
 	}
@@ -79,5 +80,38 @@
 	footer a:hover {
 		color: #8b2635;
 		text-decoration: underline;
+	}
+
+	@media (min-width: 480px) {
+		main {
+			padding: 24px 16px;
+		}
+
+		h1 {
+			font-size: 24px;
+			margin-bottom: 20px;
+		}
+
+		footer {
+			margin-top: 40px;
+			padding: 18px;
+			font-size: 14px;
+		}
+	}
+
+	@media (min-width: 768px) {
+		main {
+			padding: 40px 20px;
+		}
+
+		h1 {
+			font-size: 26px;
+			margin-bottom: 24px;
+		}
+
+		footer {
+			margin-top: 48px;
+			padding: 20px;
+		}
 	}
 </style>

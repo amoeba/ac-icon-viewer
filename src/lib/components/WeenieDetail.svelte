@@ -135,10 +135,10 @@
 
 <style>
 	.detail-container {
-		margin-top: 24px;
+		margin-top: 16px;
 		display: flex;
 		flex-direction: column;
-		gap: 16px;
+		gap: 12px;
 	}
 
 	.loading,
@@ -153,32 +153,40 @@
 
 	.weenie-card {
 		display: flex;
-		gap: 20px;
-		padding: 20px;
+		flex-direction: column;
+		align-items: center;
+		gap: 16px;
+		padding: 16px;
 		background: linear-gradient(145deg, #fafaf8 0%, #f0eeea 100%);
 		border: 1px solid #d8d4cc;
-		border-left: 3px solid #c9a227;
+		border-top: 3px solid #c9a227;
 		border-radius: 12px;
 		box-shadow: 0 2px 8px rgba(139, 115, 85, 0.08);
 	}
 
+	.weenie-info {
+		width: 100%;
+	}
+
 	.weenie-info h2 {
 		margin: 0 0 12px;
-		font-size: 20px;
+		font-size: 18px;
 		color: #3a3530;
+		text-align: center;
 	}
 
 	.weenie-info dl {
 		display: grid;
 		grid-template-columns: auto 1fr;
-		gap: 6px 16px;
+		gap: 2px 8px;
 		margin: 0;
-		font-size: 14px;
+		font-size: 12px;
 	}
 
 	.weenie-info dt {
 		font-weight: 600;
 		color: #8b7355;
+		text-align: right;
 	}
 
 	.weenie-info dd {
@@ -189,6 +197,7 @@
 	.weenie-info a {
 		color: #2c4a7c;
 		text-decoration: none;
+		word-break: break-all;
 	}
 
 	.weenie-info a:hover {
@@ -196,10 +205,60 @@
 		text-decoration: underline;
 	}
 
+	@media (min-width: 480px) {
+		.detail-container {
+			margin-top: 20px;
+			gap: 14px;
+		}
+
+		.weenie-card {
+			flex-direction: row;
+			align-items: flex-start;
+			border-top: 1px solid #d8d4cc;
+			border-left: 3px solid #c9a227;
+			padding: 18px;
+		}
+
+		.weenie-info h2 {
+			text-align: left;
+			font-size: 19px;
+		}
+
+		.weenie-info dl {
+			grid-template-columns: auto 1fr;
+			gap: 6px 16px;
+			font-size: 14px;
+		}
+
+		.weenie-info dt {
+			margin-top: 0;
+		}
+
+		.weenie-info a {
+			word-break: normal;
+		}
+	}
+
+	@media (min-width: 768px) {
+		.detail-container {
+			margin-top: 24px;
+			gap: 16px;
+		}
+
+		.weenie-card {
+			gap: 20px;
+			padding: 20px;
+		}
+
+		.weenie-info h2 {
+			font-size: 20px;
+		}
+	}
+
 	/* Apothecary Table */
 	.apothecary-table {
 		position: relative;
-		padding: 28px 24px 24px;
+		padding: 20px 12px 16px;
 		background:
 			repeating-linear-gradient(
 				90deg,
@@ -222,6 +281,18 @@
 			inset 0 -3px 6px rgba(0, 0, 0, 0.4),
 			0 4px 12px rgba(0, 0, 0, 0.5),
 			0 8px 24px rgba(0, 0, 0, 0.3);
+	}
+
+	@media (min-width: 480px) {
+		.apothecary-table {
+			padding: 24px 18px 20px;
+		}
+	}
+
+	@media (min-width: 768px) {
+		.apothecary-table {
+			padding: 28px 24px 24px;
+		}
 	}
 
 	/* Brass corner ornaments */
@@ -283,23 +354,49 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		gap: 12px;
-		margin: 0 0 20px;
+		gap: 8px;
+		margin: 0 0 14px;
 		font-family: 'Georgia', 'Times New Roman', serif;
-		font-size: 14px;
+		font-size: 12px;
 		font-weight: 400;
 		font-style: italic;
 		color: #d4a84b;
 		text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-		letter-spacing: 2px;
+		letter-spacing: 1px;
 		text-transform: uppercase;
 	}
 
 	.flourish {
 		display: inline-block;
-		width: 40px;
+		width: 24px;
 		height: 1px;
 		background: linear-gradient(90deg, transparent 0%, #d4a84b 50%, transparent 100%);
+	}
+
+	@media (min-width: 480px) {
+		.table-header {
+			gap: 10px;
+			margin-bottom: 17px;
+			font-size: 13px;
+			letter-spacing: 1.5px;
+		}
+
+		.flourish {
+			width: 32px;
+		}
+	}
+
+	@media (min-width: 768px) {
+		.table-header {
+			gap: 12px;
+			margin-bottom: 20px;
+			font-size: 14px;
+			letter-spacing: 2px;
+		}
+
+		.flourish {
+			width: 40px;
+		}
 	}
 
 	.flourish.left::before,
@@ -318,9 +415,9 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		gap: 16px;
+		gap: 8px;
 		flex-wrap: wrap;
-		padding: 16px;
+		padding: 12px 8px;
 		background:
 			linear-gradient(
 				0deg,
@@ -339,14 +436,28 @@
 			inset 0 -1px 2px rgba(255, 220, 150, 0.05);
 	}
 
+	@media (min-width: 480px) {
+		.ingredient-shelf {
+			gap: 12px;
+			padding: 14px 12px;
+		}
+	}
+
+	@media (min-width: 768px) {
+		.ingredient-shelf {
+			gap: 16px;
+			padding: 16px;
+		}
+	}
+
 	/* Individual ingredient slots */
 	.ingredient-slot {
 		position: relative;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 10px;
-		padding: 12px;
+		gap: 8px;
+		padding: 8px;
 		background:
 			radial-gradient(
 				ellipse at center bottom,
@@ -363,6 +474,20 @@
 		box-shadow:
 			inset 0 1px 1px rgba(255, 220, 150, 0.05),
 			0 2px 4px rgba(0, 0, 0, 0.3);
+	}
+
+	@media (min-width: 480px) {
+		.ingredient-slot {
+			gap: 9px;
+			padding: 10px;
+		}
+	}
+
+	@media (min-width: 768px) {
+		.ingredient-slot {
+			gap: 10px;
+			padding: 12px;
+		}
 	}
 
 	.ingredient-slot.primary {
@@ -402,7 +527,7 @@
 
 	/* Parchment-style labels */
 	.ingredient-tag {
-		padding: 3px 10px;
+		padding: 2px 8px;
 		background:
 			linear-gradient(
 				180deg,
@@ -412,7 +537,7 @@
 			);
 		border-radius: 2px;
 		font-family: 'Georgia', 'Times New Roman', serif;
-		font-size: 10px;
+		font-size: 9px;
 		font-style: italic;
 		color: #4a3828;
 		text-transform: lowercase;
@@ -422,13 +547,39 @@
 			inset 0 1px 1px rgba(255, 255, 255, 0.5);
 	}
 
+	@media (min-width: 480px) {
+		.ingredient-tag {
+			padding: 3px 9px;
+			font-size: 10px;
+		}
+	}
+
+	@media (min-width: 768px) {
+		.ingredient-tag {
+			padding: 3px 10px;
+			font-size: 10px;
+		}
+	}
+
 	/* Alchemical connector symbols */
 	.alchemical-symbol {
-		font-size: 42px;
+		font-size: 28px;
 		font-weight: 700;
 		color: #d4a84b;
 		text-shadow: 0 0 8px rgba(212, 168, 75, 0.4);
 		line-height: 1;
 		opacity: 0.65;
+	}
+
+	@media (min-width: 480px) {
+		.alchemical-symbol {
+			font-size: 36px;
+		}
+	}
+
+	@media (min-width: 768px) {
+		.alchemical-symbol {
+			font-size: 42px;
+		}
 	}
 </style>

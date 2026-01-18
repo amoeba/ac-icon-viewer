@@ -116,11 +116,11 @@
 
 	.search-input {
 		width: 100%;
-		padding: 14px 16px;
+		padding: 12px 14px;
 		font-size: 16px;
 		background: linear-gradient(145deg, #fffffe 0%, #faf9f7 100%);
 		border: 1px solid #d8d4cc;
-		border-radius: 12px;
+		border-radius: 10px;
 		box-sizing: border-box;
 		box-shadow:
 			0 2px 8px rgba(139, 115, 85, 0.06),
@@ -142,10 +142,10 @@
 
 	.loading {
 		position: absolute;
-		right: 16px;
+		right: 14px;
 		top: 50%;
 		transform: translateY(-50%);
-		font-size: 12px;
+		font-size: 11px;
 		color: #8b7355;
 		font-weight: 500;
 	}
@@ -155,14 +155,14 @@
 		top: 100%;
 		left: 0;
 		right: 0;
-		margin: 8px 0 0;
-		padding: 8px 0;
+		margin: 6px 0 0;
+		padding: 6px 0;
 		list-style: none;
 		background: linear-gradient(145deg, #fffffe 0%, #faf9f7 100%);
 		border: 1px solid #d8d4cc;
-		border-radius: 12px;
+		border-radius: 10px;
 		box-shadow: 0 8px 24px rgba(139, 115, 85, 0.15);
-		max-height: 320px;
+		max-height: 280px;
 		overflow-y: auto;
 		z-index: 100;
 	}
@@ -171,7 +171,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: 12px 16px;
+		padding: 10px 14px;
 		cursor: pointer;
 		transition: background 0.15s ease;
 	}
@@ -184,11 +184,74 @@
 	.result-name {
 		font-weight: 500;
 		color: #3a3530;
+		font-size: 14px;
 	}
 
 	.result-id {
-		font-size: 12px;
+		font-size: 11px;
 		color: #8b7355;
 		font-weight: 500;
+	}
+
+	@media (min-width: 480px) {
+		.search-input {
+			padding: 13px 15px;
+			border-radius: 11px;
+		}
+
+		.loading {
+			right: 15px;
+			font-size: 12px;
+		}
+
+		.results-dropdown {
+			margin-top: 7px;
+			padding: 7px 0;
+			border-radius: 11px;
+			max-height: 300px;
+		}
+
+		.result-item {
+			padding: 11px 15px;
+		}
+
+		.result-name {
+			font-size: 15px;
+		}
+
+		.result-id {
+			font-size: 12px;
+		}
+	}
+
+	@media (min-width: 768px) {
+		.search-input {
+			padding: 14px 16px;
+			border-radius: 12px;
+		}
+
+		.loading {
+			right: 16px;
+			font-size: 12px;
+		}
+
+		.results-dropdown {
+			margin-top: 8px;
+			padding: 8px 0;
+			border-radius: 12px;
+			max-height: 320px;
+		}
+
+		.result-item {
+			padding: 12px 16px;
+		}
+
+		.result-name {
+			font-size: 16px;
+		}
+
+		.result-id {
+			font-size: 12px;
+		}
 	}
 </style>
