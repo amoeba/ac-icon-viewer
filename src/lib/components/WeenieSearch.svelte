@@ -112,30 +112,42 @@
 	.search-container {
 		position: relative;
 		width: 100%;
-		max-width: 400px;
 	}
 
 	.search-input {
 		width: 100%;
-		padding: 10px 12px;
+		padding: 14px 16px;
 		font-size: 16px;
-		border: 1px solid #ccc;
-		border-radius: 4px;
+		background: linear-gradient(145deg, #ffffff 0%, #fafafa 100%);
+		border: 1px solid #e0e0e0;
+		border-radius: 12px;
 		box-sizing: border-box;
+		box-shadow:
+			0 2px 8px rgba(0, 0, 0, 0.04),
+			inset 0 1px 0 rgba(255, 255, 255, 0.8);
+		transition: border-color 0.2s ease, box-shadow 0.2s ease;
 	}
 
 	.search-input:focus {
 		outline: none;
-		border-color: #666;
+		border-color: #bbb;
+		box-shadow:
+			0 2px 12px rgba(0, 0, 0, 0.08),
+			inset 0 1px 0 rgba(255, 255, 255, 0.8);
+	}
+
+	.search-input::placeholder {
+		color: #aaa;
 	}
 
 	.loading {
 		position: absolute;
-		right: 12px;
+		right: 16px;
 		top: 50%;
 		transform: translateY(-50%);
 		font-size: 12px;
-		color: #888;
+		color: #999;
+		font-weight: 500;
 	}
 
 	.results-dropdown {
@@ -143,14 +155,14 @@
 		top: 100%;
 		left: 0;
 		right: 0;
-		margin: 4px 0 0;
-		padding: 0;
+		margin: 8px 0 0;
+		padding: 8px 0;
 		list-style: none;
-		background: white;
-		border: 1px solid #ccc;
-		border-radius: 4px;
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-		max-height: 300px;
+		background: linear-gradient(145deg, #ffffff 0%, #fafafa 100%);
+		border: 1px solid #e0e0e0;
+		border-radius: 12px;
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+		max-height: 320px;
 		overflow-y: auto;
 		z-index: 100;
 	}
@@ -159,21 +171,24 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: 10px 12px;
+		padding: 12px 16px;
 		cursor: pointer;
+		transition: background 0.15s ease;
 	}
 
 	.result-item:hover,
 	.result-item.selected {
-		background: #f0f0f0;
+		background: linear-gradient(145deg, #f5f5f5 0%, #ebebeb 100%);
 	}
 
 	.result-name {
 		font-weight: 500;
+		color: #333;
 	}
 
 	.result-id {
 		font-size: 12px;
-		color: #888;
+		color: #999;
+		font-weight: 500;
 	}
 </style>

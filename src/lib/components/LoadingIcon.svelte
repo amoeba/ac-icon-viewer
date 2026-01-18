@@ -47,19 +47,26 @@
 	.icon-wrapper {
 		position: relative;
 		flex-shrink: 0;
-		background: #fff;
-		border: 1px solid #ddd;
-		border-radius: 4px;
+		background: linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%);
+		border: 1px solid #e0e0e0;
+		border-radius: 8px;
 		overflow: hidden;
+		box-shadow:
+			0 1px 3px rgba(0, 0, 0, 0.06),
+			inset 0 1px 0 rgba(255, 255, 255, 0.8);
 	}
 
 	.placeholder {
 		position: absolute;
 		inset: 0;
-		background: linear-gradient(135deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+		background: linear-gradient(
+			135deg,
+			#f0f0f0 0%,
+			#fafafa 50%,
+			#f0f0f0 100%
+		);
 		background-size: 200% 200%;
-		animation: shimmer 1.5s ease-in-out infinite;
-		border-radius: 4px;
+		animation: shimmer 1.8s ease-in-out infinite;
 	}
 
 	@keyframes shimmer {
@@ -77,11 +84,10 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background: #f5f5f5;
-		border: 1px solid #ddd;
-		border-radius: 4px;
-		color: #999;
+		background: linear-gradient(145deg, #fafafa 0%, #f0f0f0 100%);
+		color: #bbb;
 		font-size: 24px;
+		font-weight: 300;
 	}
 
 	img {
@@ -89,7 +95,7 @@
 		height: 100%;
 		image-rendering: pixelated;
 		opacity: 0;
-		transition: opacity 0.2s ease-in;
+		transition: opacity 0.25s ease-out;
 	}
 
 	img.loaded {

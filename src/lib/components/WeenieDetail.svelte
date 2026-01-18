@@ -117,6 +117,9 @@
 <style>
 	.detail-container {
 		margin-top: 24px;
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
 	}
 
 	.loading,
@@ -133,21 +136,24 @@
 		display: flex;
 		gap: 20px;
 		padding: 20px;
-		background: #f9f9f9;
-		border: 1px solid #ddd;
-		border-radius: 8px;
+		background: linear-gradient(145deg, #fafafa 0%, #f0f0f0 100%);
+		border: 1px solid #e0e0e0;
+		border-radius: 12px;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 	}
 
 	.weenie-info h2 {
 		margin: 0 0 12px;
 		font-size: 20px;
+		color: #333;
 	}
 
 	.weenie-info dl {
 		display: grid;
 		grid-template-columns: auto 1fr;
-		gap: 4px 16px;
+		gap: 6px 16px;
 		margin: 0;
+		font-size: 14px;
 	}
 
 	.weenie-info dt {
@@ -157,6 +163,7 @@
 
 	.weenie-info dd {
 		margin: 0;
+		color: #444;
 	}
 
 	.weenie-info a {
@@ -169,22 +176,26 @@
 	}
 
 	.icon-breakdown {
-		margin-top: 20px;
-		padding: 16px;
-		background: #f0f0f0;
-		border-radius: 8px;
+		padding: 20px;
+		background: linear-gradient(145deg, #fafafa 0%, #f0f0f0 100%);
+		border: 1px solid #e0e0e0;
+		border-radius: 12px;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 	}
 
 	.icon-breakdown h3 {
-		margin: 0 0 12px;
+		margin: 0 0 16px;
 		font-size: 14px;
+		font-weight: 600;
 		color: #666;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
 	}
 
 	.breakdown-row {
 		display: flex;
 		align-items: center;
-		gap: 12px;
+		gap: 16px;
 		flex-wrap: wrap;
 	}
 
@@ -192,17 +203,20 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 4px;
+		gap: 8px;
 	}
 
 	.breakdown-item .label {
 		font-size: 11px;
+		font-weight: 500;
 		color: #888;
+		text-transform: uppercase;
+		letter-spacing: 0.3px;
 	}
 
 	.plus {
-		font-size: 24px;
+		font-size: 20px;
 		font-weight: 300;
-		color: #999;
+		color: #bbb;
 	}
 </style>
