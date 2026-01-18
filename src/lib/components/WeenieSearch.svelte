@@ -118,26 +118,26 @@
 		width: 100%;
 		padding: 14px 16px;
 		font-size: 16px;
-		background: linear-gradient(145deg, #ffffff 0%, #fafafa 100%);
-		border: 1px solid #e0e0e0;
+		background: linear-gradient(145deg, #fffffe 0%, #faf9f7 100%);
+		border: 1px solid #d8d4cc;
 		border-radius: 12px;
 		box-sizing: border-box;
 		box-shadow:
-			0 2px 8px rgba(0, 0, 0, 0.04),
+			0 2px 8px rgba(139, 115, 85, 0.06),
 			inset 0 1px 0 rgba(255, 255, 255, 0.8);
 		transition: border-color 0.2s ease, box-shadow 0.2s ease;
 	}
 
 	.search-input:focus {
 		outline: none;
-		border-color: #bbb;
+		border-color: #c9a227;
 		box-shadow:
-			0 2px 12px rgba(0, 0, 0, 0.08),
+			0 2px 12px rgba(201, 162, 39, 0.15),
 			inset 0 1px 0 rgba(255, 255, 255, 0.8);
 	}
 
 	.search-input::placeholder {
-		color: #aaa;
+		color: #a09080;
 	}
 
 	.loading {
@@ -146,7 +146,7 @@
 		top: 50%;
 		transform: translateY(-50%);
 		font-size: 12px;
-		color: #999;
+		color: #8b7355;
 		font-weight: 500;
 	}
 
@@ -158,10 +158,10 @@
 		margin: 8px 0 0;
 		padding: 8px 0;
 		list-style: none;
-		background: linear-gradient(145deg, #ffffff 0%, #fafafa 100%);
-		border: 1px solid #e0e0e0;
+		background: linear-gradient(145deg, #fffffe 0%, #faf9f7 100%);
+		border: 1px solid #d8d4cc;
 		border-radius: 12px;
-		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+		box-shadow: 0 8px 24px rgba(139, 115, 85, 0.15);
 		max-height: 320px;
 		overflow-y: auto;
 		z-index: 100;
@@ -178,17 +178,17 @@
 
 	.result-item:hover,
 	.result-item.selected {
-		background: linear-gradient(145deg, #f5f5f5 0%, #ebebeb 100%);
+		background: linear-gradient(145deg, #f5f3ef 0%, #ebe8e2 100%);
 	}
 
 	.result-name {
 		font-weight: 500;
-		color: #333;
+		color: #3a3530;
 	}
 
 	.result-id {
 		font-size: 12px;
-		color: #999;
+		color: #8b7355;
 		font-weight: 500;
 	}
 </style>

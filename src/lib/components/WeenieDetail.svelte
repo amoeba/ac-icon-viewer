@@ -124,28 +124,29 @@
 
 	.loading,
 	.error {
-		color: #888;
+		color: #8b7355;
 		font-style: italic;
 	}
 
 	.error {
-		color: #c00;
+		color: #8b2635;
 	}
 
 	.weenie-card {
 		display: flex;
 		gap: 20px;
 		padding: 20px;
-		background: linear-gradient(145deg, #fafafa 0%, #f0f0f0 100%);
-		border: 1px solid #e0e0e0;
+		background: linear-gradient(145deg, #fafaf8 0%, #f0eeea 100%);
+		border: 1px solid #d8d4cc;
+		border-left: 3px solid #c9a227;
 		border-radius: 12px;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+		box-shadow: 0 2px 8px rgba(139, 115, 85, 0.08);
 	}
 
 	.weenie-info h2 {
 		margin: 0 0 12px;
 		font-size: 20px;
-		color: #333;
+		color: #3a3530;
 	}
 
 	.weenie-info dl {
@@ -158,36 +159,37 @@
 
 	.weenie-info dt {
 		font-weight: 600;
-		color: #666;
+		color: #8b7355;
 	}
 
 	.weenie-info dd {
 		margin: 0;
-		color: #444;
+		color: #4a4540;
 	}
 
 	.weenie-info a {
-		color: #0066cc;
+		color: #2c4a7c;
 		text-decoration: none;
 	}
 
 	.weenie-info a:hover {
+		color: #8b2635;
 		text-decoration: underline;
 	}
 
 	.icon-breakdown {
 		padding: 20px;
-		background: linear-gradient(145deg, #fafafa 0%, #f0f0f0 100%);
-		border: 1px solid #e0e0e0;
+		background: linear-gradient(145deg, #fafaf8 0%, #f0eeea 100%);
+		border: 1px solid #d8d4cc;
 		border-radius: 12px;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+		box-shadow: 0 2px 8px rgba(139, 115, 85, 0.08);
 	}
 
 	.icon-breakdown h3 {
 		margin: 0 0 16px;
-		font-size: 14px;
+		font-size: 13px;
 		font-weight: 600;
-		color: #666;
+		color: #8b7355;
 		text-transform: uppercase;
 		letter-spacing: 0.5px;
 	}
@@ -209,7 +211,7 @@
 	.breakdown-item .label {
 		font-size: 11px;
 		font-weight: 500;
-		color: #888;
+		color: #8b7355;
 		text-transform: uppercase;
 		letter-spacing: 0.3px;
 	}
@@ -217,6 +219,6 @@
 	.plus {
 		font-size: 20px;
 		font-weight: 300;
-		color: #bbb;
+		color: #c9a227;
 	}
 </style>

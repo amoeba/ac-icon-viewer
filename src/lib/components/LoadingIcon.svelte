@@ -47,12 +47,12 @@
 	.icon-wrapper {
 		position: relative;
 		flex-shrink: 0;
-		background: linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%);
-		border: 1px solid #e0e0e0;
+		background: linear-gradient(145deg, #fffffe 0%, #f8f6f2 100%);
+		border: 1px solid #d8d4cc;
 		border-radius: 8px;
 		overflow: hidden;
 		box-shadow:
-			0 1px 3px rgba(0, 0, 0, 0.06),
+			0 1px 3px rgba(139, 115, 85, 0.08),
 			inset 0 1px 0 rgba(255, 255, 255, 0.8);
 	}
 
@@ -61,9 +61,9 @@
 		inset: 0;
 		background: linear-gradient(
 			135deg,
-			#f0f0f0 0%,
-			#fafafa 50%,
-			#f0f0f0 100%
+			#ebe8e2 0%,
+			#f8f6f2 50%,
+			#ebe8e2 100%
 		);
 		background-size: 200% 200%;
 		animation: shimmer 1.8s ease-in-out infinite;
@@ -84,8 +84,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background: linear-gradient(145deg, #fafafa 0%, #f0f0f0 100%);
-		color: #bbb;
+		background: linear-gradient(145deg, #faf9f7 0%, #f0eeea 100%);
+		color: #c9a227;
 		font-size: 24px;
 		font-weight: 300;
 	}
