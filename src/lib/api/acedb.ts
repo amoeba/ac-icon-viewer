@@ -68,11 +68,13 @@ export function buildIconUrl(
 	iconId: number,
 	overlay?: number | null,
 	overlay2?: number | null,
-	underlay?: number | null
+	underlay?: number | null,
+	itemType?: number | null
 ): string {
 	let url = `https://dats.treestats.net/icons/${iconId}?scale=2`;
 	if (overlay) url += `&overlay=${overlay}`;
 	if (overlay2) url += `&overlay2=${overlay2}`;
 	if (underlay) url += `&underlay=${underlay}`;
+	if (itemType != null) url += `&background=${itemType}`;
 	return url;
 }

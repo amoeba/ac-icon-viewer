@@ -41,7 +41,7 @@
 		<div class="weenie-card">
 			{#if weenie.icon_id}
 				<img
-					src={buildIconUrl(weenie.icon_id, weenie.icon_overlay, weenie.icon_overlay2, weenie.icon_underlay)}
+					src={buildIconUrl(weenie.icon_id, weenie.icon_overlay, weenie.icon_overlay2, weenie.icon_underlay, weenie.type)}
 					alt={weenie.name ?? weenie.class_Name}
 					class="weenie-icon"
 				/>
@@ -59,7 +59,7 @@
 						<dt>Icon ID</dt>
 						<dd>{weenie.icon_id}</dd>
 						<dt>Icon URL</dt>
-						<dd><a href={buildIconUrl(weenie.icon_id, weenie.icon_overlay, weenie.icon_overlay2, weenie.icon_underlay)} target="_blank" rel="noopener">View icon</a></dd>
+						<dd><a href={buildIconUrl(weenie.icon_id, weenie.icon_overlay, weenie.icon_overlay2, weenie.icon_underlay, weenie.type)} target="_blank" rel="noopener">View icon</a></dd>
 					{/if}
 				</dl>
 			</div>
@@ -68,6 +68,7 @@
 		{#if weenie.icon_id}
 			<div class="icon-breakdown">
 				<h3>Icon Breakdown</h3>
+				<p class="breakdown-type">Type: {weenie.type}</p>
 				<div class="breakdown-row">
 					{#if weenie.icon_underlay}
 						<div class="breakdown-item">
@@ -169,9 +170,15 @@
 	}
 
 	.icon-breakdown h3 {
-		margin: 0 0 12px;
+		margin: 0 0 8px;
 		font-size: 14px;
 		color: #666;
+	}
+
+	.breakdown-type {
+		margin: 0 0 12px;
+		font-size: 12px;
+		color: #888;
 	}
 
 	.breakdown-row {
